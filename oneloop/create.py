@@ -56,7 +56,7 @@ if len(sys.argv) > 1:
 objects = re.sub(r'\.f90','.o',sourcef)
 library = 'lib'+re.sub(r'\.f90','.a',sourcef)
 
-head = [fc]+fflags.split()+['-c']
+head = [fc] + fflags.split() + ['-fPIC', '-c']
 tail = [sourcef,'-o',objects]
 
 if ddtype+qdtype+mptype == '':
